@@ -77,23 +77,22 @@ void converterVolume()
 void converterTemperatura()
 {
 
-// Declaração das variáveis (tipo double)
-double celsius, fahrenheit, kelvin;
+    // Declaração das variáveis (tipo double)
+    double celsius, fahrenheit, kelvin;
 
-// Solicitando a entrada da temperatura em Celsius
-printf("Informe a temperatura em Graus Celsius: ");
-scanf("%lf", &celsius);
+    // Solicitando a entrada da temperatura em Celsius
+    printf("Informe a temperatura em Graus Celsius: ");
+    scanf("%lf", &celsius);
 
-// Convertendo Celsius para Fahrenheit
-fahrenheit = (celsius * 9/5) + 32;
+    // Convertendo Celsius para Fahrenheit
+    fahrenheit = (celsius * 9 / 5) + 32;
 
-// Convertendo Celsius para Kelvin
-kelvin = celsius + 273.15;
+    // Convertendo Celsius para Kelvin
+    kelvin = celsius + 273.15;
 
-// Exibindo os resultados
-printf("A temperatura %.2lf ºC equivale a %.2lf ºF\n", celsius, fahrenheit);
-printf("A temperatura %.2lf ºC equivale a %.2lf K\n", celsius, kelvin);
-
+    // Exibindo os resultados
+    printf("A temperatura %.2lf ºC equivale a %.2lf ºF\n", celsius, fahrenheit);
+    printf("A temperatura %.2lf ºC equivale a %.2lf K\n", celsius, kelvin);
 }
 
 void converterVelocidade()
