@@ -117,8 +117,51 @@ void converterTemperatura()
 {
 }
 
-void converterVelocidade()
-{
+void converterVelocidade() {
+    int opcao;
+    float velocidade, resultado;
+
+    printf("Escolha a conversão desejada:\n");
+    printf("1 - km/h para m/s\n");
+    printf("2 - km/h para mph\n");
+    printf("3 - m/s para km/h\n");
+    printf("4 - m/s para mph\n");
+    printf("5 - mph para km/h\n");
+    printf("6 - mph para m/s\n");
+    printf("Opção: ");
+    scanf("%d", &opcao);
+
+    printf("Digite a velocidade: ");
+    scanf("%f", &velocidade);
+    
+        switch (opcao) {
+                case 1: // km/h para m/s
+                    resultado = velocidade / 3.6;
+                    printf("%.2f km/h equivalem a %.2f m/s\n", velocidade, resultado);
+                    break;
+                case 2: // km/h para mph
+                    resultado = velocidade / 1.609;
+                    printf("%.2f km/h equivalem a %.2f mph\n", velocidade, resultado);
+                    break;
+                case 3: // m/s para km/h
+                    resultado = velocidade * 3.6;
+                    printf("%.2f m/s equivalem a %.2f km/h\n", velocidade, resultado);
+                    break;
+                 case 4: // m/s para mph
+                    resultado = velocidade * 2.237;
+                    printf("%.2f m/s equivalem a %.2f mph\n", velocidade, resultado);
+                    break;
+                case 5: // mph para km/h
+                    resultado = velocidade * 1.609;
+                    printf("%.2f mph equivalem a %.2f km/h\n", velocidade, resultado);
+                    break;
+                case 6: // mph para m/s
+                    resultado = velocidade / 2.237;
+                    printf("%.2f mph equivalem a %.2f m/s\n", velocidade, resultado);
+                    break;
+                default:
+                    printf("Opção inválida!\n");
+    }
 }
 
 void converterPotencia()
