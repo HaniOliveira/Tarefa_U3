@@ -163,11 +163,11 @@ void converterVelocidade()
     default:
         printf("Opção inválida!\n");
     }
+}
+void converterPotencia()
+{
+}
 
-    void converterPotencia()
-    {
-    }
-
-    void converterArea()
-    {
-    }
+void converterArea()
+{
+}
