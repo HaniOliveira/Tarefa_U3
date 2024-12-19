@@ -66,6 +66,64 @@ void converterComprimento()
 
 void converterMassa()
 {
+   
+// Funçã princicpal
+
+    int unidade_inicial, unidade_final;
+    float valor;
+
+    // Solicita ao usuário a unidade de entrada/inicial
+    printf("Escolha a unidade de entrada conforme abaixo:\n");
+    printf("1 - Quilograma (kg) | 2 - Grama (g) | 3 - Tonelada (t)\n");
+    scanf("%d", &unidade_inicial);
+
+    // Solicita ao usuárioa unidade de saída (unidade a ser convertida)
+    printf("Escolha a unidade de saída conforme abaixo:\n");
+    printf("1 - Quilograma (kg) | 2 - Grama (g) | 3 - Tonelada (t)\n");
+    scanf("%d", &unidade_final);
+
+    // Verifica se a opção escolhida é válida
+    if ((unidade_inicial < 1 || unidade_inicial > 3) || (unidade_final < 1 || unidade_final > 3)) {
+        printf("Opção inválida!\n");
+        return 1; // Encerra o programa se não for uma opção válida
+    }
+
+    printf("Informe o valor que deseja converter: ");
+    scanf("%f", &valor);
+
+
+
+    // Função para cálculo das conversões
+
+    if (unidade_inicial == 1) {  // Quilograma
+        if (unidade_final == 1) {
+            printf("%.2f kg equivale a %.2f kg\n", valor, valor);
+        } else if (unidade_final == 2) {
+            printf("%.2f kg equivale a %.2f g\n", valor, valor * 1000);
+        } else if (unidade_final == 3) {
+            printf("%.2f kg equivale a %.2f t\n", valor, valor / 1000);
+        }
+    } else if (unidade_inicial == 2) {  // Grama
+        if (unidade_final == 1) {
+            printf("%.2f g equivale a %.2f kg\n", valor, valor / 1000);
+        } else if (unidade_final == 2) {
+            printf("%.2f g equivale a %.2f g\n", valor, valor);
+        } else if (unidade_final == 3) {
+            printf("%.2f g equivale a %.2f t\n", valor, valor / 1000000);
+        }
+    } else if (unidade_inicial == 3) {  // Tonelada
+        if (unidade_final == 1) {
+            printf("%.2f t equivale a %.2f kg\n", valor, valor * 1000);
+        } else if (unidade_final == 2) {
+            printf("%.2f t equivale a %.2f g\n", valor, valor * 1000000);
+        } else if (unidade_final == 3) {
+            printf("%.2f t equivale a %.2f t\n", valor, valor);
+        }
+    } else {
+        printf("Opção inválida!\n");
+    }
+
+    
 }
 
 void converterVolume()
