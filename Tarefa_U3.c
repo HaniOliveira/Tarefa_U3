@@ -11,6 +11,8 @@ void converterArea();
 
 int main()
 {
+    system("chcp 65001>null");
+
     int escolha;
     do
     {
@@ -91,8 +93,6 @@ void converterMassa()
     printf("Informe o valor que deseja converter: ");
     scanf("%f", &valor);
 
-
-
     // Função para cálculo das conversões
 
     if (unidade_inicial == 1) {  // Quilograma
@@ -123,7 +123,7 @@ void converterMassa()
         printf("Opção inválida!\n");
     }
 
-    
+
 }
 
 void converterVolume()
