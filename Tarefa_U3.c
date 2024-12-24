@@ -55,7 +55,7 @@ int main()
         default:
             printf("Escolha inválida. Tente novamente.\n");
         }
-    } while (escolha != 0);
+    } while (escolha > 0);
 
     return 0;
 }
@@ -184,6 +184,65 @@ void converterVelocidade()
 }
 void converterPotencia()
 {
+    int opcao;
+    float pot, resultado;
+
+    do
+    {
+        printf("Escolha a conversão desejada:\n\t\tCV = Cavalo Vapor\t~=\tHP = Hourse Power\n");
+        printf("1 - W para kW\n");
+        printf("2 - W para CV\n");
+        printf("3 - CV para w\n");
+        printf("4 - CV para kW\n");
+        printf("5 - kW para W\n");
+        printf("6 - kW para CV\n");
+        printf("0 - Voltar\n");
+        printf("Digite sua escolha: ");
+        scanf("%d", &opcao);
+
+        if (opcao>6 || opcao<0)
+            printf("\n\tOpção inválida!");
+        else if (opcao==0)
+        {
+            printf("\tSaindo...\n\n");
+            return;
+        }
+    } while (opcao>6 || opcao<0);
+ 
+    printf("Digite a Potencia: ");
+    scanf("%f", &pot);
+
+    switch (opcao)
+    {
+    case 1:
+        resultado = pot / 1000.0;
+        printf("%.2f W equivalem a %.2f kW", pot, resultado);
+        break;
+    case 2:
+        resultado = pot * 0.00135962;
+        printf("%.2f W equivalem a %.2f CV", pot, resultado);
+        break;   
+    case 3:
+        resultado = pot * 735.499;
+        printf("%.2f CV equivalem a %.2f W", pot, resultado);
+        break;  
+    case 4:
+        resultado = pot * 0.735499;
+        printf("%.2f CV equivalem a %.2f kW", pot, resultado);
+        break; 
+    case 5:
+        resultado = pot * 1000.0;
+        printf("%.2f kW equivalem a %.2f W", pot, resultado);
+        break; 
+    case 6:
+        resultado = pot * 1.35962;
+        printf("%.2f kW equivalem a %.2f CV", pot, resultado);
+        break;
+    default:
+        printf("\n\tOpção inválida!\n");
+        break;
+    }
+    printf("\n\n");
 }
 
 void converterArea()
