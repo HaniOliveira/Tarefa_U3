@@ -8,6 +8,7 @@ void converterTemperatura();
 void converterVelocidade();
 void converterPotencia();
 void converterArea();
+void converterASCIIParaCaractere();
 
 int main()
 {
@@ -22,6 +23,7 @@ int main()
         printf("5. Velocidade\n");
         printf("6. Potência\n");
         printf("7. Área\n");
+        printf("8. ASCII para Caractere\n");
         printf("0. Sair\n");
         printf("Digite sua escolha: ");
         scanf("%d", &escolha);
@@ -48,6 +50,9 @@ int main()
             break;
         case 7:
             converterArea();
+            break;
+        case 8:
+            converterASCIIParaCaractere();
             break;
         case 0:
             printf("Saindo...\n");
@@ -182,9 +187,27 @@ void converterVelocidade()
         printf("Opção inválida!\n");
     }
 }
-void converterPotencia()
-{
+void converterPotencia() 
+{  
 }
+
+void converterASCIIParaCaractere() {
+    int codigoASCII;
+    int resp = 0;
+
+    do{
+        printf("Digite o código ASCII (Um número entre 0 e 127): ");
+        scanf("%d", &codigoASCII);
+        if(codigoASCII >= 0 && codigoASCII <= 127) {
+            printf("O caractere correspondente ao código ASCII %d é: '%c'\n\n", codigoASCII, (char)codigoASCII);
+        }else{
+            printf("Código inválido. Por favor, digite um número entre 0 e 127\n\n");
+        }
+        printf("Deseja realizar o processo novamente (1 - Sim | 0 - Não)? ");
+        scanf("%d", &resp);
+    }while(resp == 1);
+}
+
 
 void converterArea()
 {
